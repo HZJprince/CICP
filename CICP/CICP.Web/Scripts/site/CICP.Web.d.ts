@@ -419,6 +419,26 @@ declare namespace CICP.MobileUser {
         constructor(container: JQuery);
     }
 }
+declare namespace CICP.MobileUser {
+    class MobileAccountDialog extends Serenity.EntityDialog<MobileAccountRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: MobileAccountForm;
+    }
+}
+declare namespace CICP.MobileUser {
+    class MobileAccountGrid extends Serenity.EntityGrid<MobileAccountRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MobileAccountDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
 declare namespace CICP.Membership {
     class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
         protected getFormKey(): string;
@@ -1044,6 +1064,52 @@ declare namespace CICP.Membership {
         DisplayName?: string;
         Email?: string;
         Password?: string;
+    }
+}
+declare namespace CICP.MobileUser {
+    class MobileAccountForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface MobileAccountForm {
+        Name: Serenity.StringEditor;
+        Tel: Serenity.StringEditor;
+        Orderno: Serenity.StringEditor;
+    }
+}
+declare namespace CICP.MobileUser {
+    interface MobileAccountRow {
+        Name?: string;
+        Tel?: string;
+        Idnumber?: string;
+        Orderno?: string;
+    }
+    namespace MobileAccountRow {
+        const idProperty: string;
+        const nameProperty: string;
+        const localTextPrefix: string;
+        namespace Fields {
+            const Name: any;
+            const Tel: any;
+            const Idnumber: any;
+            const Orderno: any;
+        }
+    }
+}
+declare namespace CICP.MobileUser {
+    namespace MobileAccountService {
+        const baseUrl: string;
+        function Create(request: Serenity.SaveRequest<MobileAccountRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MobileAccountRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MobileAccountRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MobileAccountRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
     }
 }
 declare namespace CICP.MobileUser {

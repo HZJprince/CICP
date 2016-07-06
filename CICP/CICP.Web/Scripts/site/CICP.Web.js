@@ -1667,6 +1667,52 @@ var CICP;
 })(CICP || (CICP = {}));
 var CICP;
 (function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileAccountDialog = (function (_super) {
+            __extends(MobileAccountDialog, _super);
+            function MobileAccountDialog() {
+                _super.apply(this, arguments);
+                this.form = new MobileUser.MobileAccountForm(this.idPrefix);
+            }
+            MobileAccountDialog.prototype.getFormKey = function () { return MobileUser.MobileAccountForm.formKey; };
+            MobileAccountDialog.prototype.getIdProperty = function () { return MobileUser.MobileAccountRow.idProperty; };
+            MobileAccountDialog.prototype.getLocalTextPrefix = function () { return MobileUser.MobileAccountRow.localTextPrefix; };
+            MobileAccountDialog.prototype.getNameProperty = function () { return MobileUser.MobileAccountRow.nameProperty; };
+            MobileAccountDialog.prototype.getService = function () { return MobileUser.MobileAccountService.baseUrl; };
+            MobileAccountDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MobileAccountDialog);
+            return MobileAccountDialog;
+        }(Serenity.EntityDialog));
+        MobileUser.MobileAccountDialog = MobileAccountDialog;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileAccountGrid = (function (_super) {
+            __extends(MobileAccountGrid, _super);
+            function MobileAccountGrid(container) {
+                _super.call(this, container);
+            }
+            MobileAccountGrid.prototype.getColumnsKey = function () { return 'MobileUser.MobileAccount'; };
+            MobileAccountGrid.prototype.getDialogType = function () { return MobileUser.MobileAccountDialog; };
+            MobileAccountGrid.prototype.getIdProperty = function () { return MobileUser.MobileAccountRow.idProperty; };
+            MobileAccountGrid.prototype.getLocalTextPrefix = function () { return MobileUser.MobileAccountRow.localTextPrefix; };
+            MobileAccountGrid.prototype.getService = function () { return MobileUser.MobileAccountService.baseUrl; };
+            MobileAccountGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MobileAccountGrid);
+            return MobileAccountGrid;
+        }(Serenity.EntityGrid));
+        MobileUser.MobileAccountGrid = MobileAccountGrid;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
     var Membership;
     (function (Membership) {
         var LoginPanel = (function (_super) {
@@ -2666,6 +2712,55 @@ var CICP;
         Membership.SignUpForm = SignUpForm;
         [['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['ConfirmEmail', function () { return Serenity.EmailEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(SignUpForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CICP.Membership || (CICP.Membership = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileAccountForm = (function (_super) {
+            __extends(MobileAccountForm, _super);
+            function MobileAccountForm() {
+                _super.apply(this, arguments);
+            }
+            MobileAccountForm.formKey = 'MobileUser.MobileAccount';
+            return MobileAccountForm;
+        }(Serenity.PrefixedContext));
+        MobileUser.MobileAccountForm = MobileAccountForm;
+        [['Name', function () { return Serenity.StringEditor; }], ['Tel', function () { return Serenity.StringEditor; }], ['Idnumber', function () { return Serenity.StringEditor; }], ['Orderno', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MobileAccountForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileAccountRow;
+        (function (MobileAccountRow) {
+            MobileAccountRow.idProperty = 'Idnumber';
+            MobileAccountRow.nameProperty = 'Name';
+            MobileAccountRow.localTextPrefix = 'MobileUser.MobileAccount';
+            var Fields;
+            (function (Fields) {
+            })(Fields = MobileAccountRow.Fields || (MobileAccountRow.Fields = {}));
+            ['Name', 'Tel', 'Idnumber', 'Orderno'].forEach(function (x) { return Fields[x] = x; });
+        })(MobileAccountRow = MobileUser.MobileAccountRow || (MobileUser.MobileAccountRow = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileAccountService;
+        (function (MobileAccountService) {
+            MobileAccountService.baseUrl = 'MobileUser/MobileAccount';
+            var Methods;
+            (function (Methods) {
+            })(Methods = MobileAccountService.Methods || (MobileAccountService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                MobileAccountService[x] = function (r, s, o) { return Q.serviceRequest(MobileAccountService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = MobileAccountService.baseUrl + '/' + x;
+            });
+        })(MobileAccountService = MobileUser.MobileAccountService || (MobileUser.MobileAccountService = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;
 (function (CICP) {
