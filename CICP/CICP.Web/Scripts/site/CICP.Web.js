@@ -1621,6 +1621,52 @@ var CICP;
 })(CICP || (CICP = {}));
 var CICP;
 (function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileUserDialog = (function (_super) {
+            __extends(MobileUserDialog, _super);
+            function MobileUserDialog() {
+                _super.apply(this, arguments);
+                this.form = new MobileUser.MobileUserForm(this.idPrefix);
+            }
+            MobileUserDialog.prototype.getFormKey = function () { return MobileUser.MobileUserForm.formKey; };
+            MobileUserDialog.prototype.getIdProperty = function () { return MobileUser.MobileUserRow.idProperty; };
+            MobileUserDialog.prototype.getLocalTextPrefix = function () { return MobileUser.MobileUserRow.localTextPrefix; };
+            MobileUserDialog.prototype.getNameProperty = function () { return MobileUser.MobileUserRow.nameProperty; };
+            MobileUserDialog.prototype.getService = function () { return MobileUser.MobileUserService.baseUrl; };
+            MobileUserDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MobileUserDialog);
+            return MobileUserDialog;
+        }(Serenity.EntityDialog));
+        MobileUser.MobileUserDialog = MobileUserDialog;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileUserGrid = (function (_super) {
+            __extends(MobileUserGrid, _super);
+            function MobileUserGrid(container) {
+                _super.call(this, container);
+            }
+            MobileUserGrid.prototype.getColumnsKey = function () { return 'MobileUser.MobileUser'; };
+            MobileUserGrid.prototype.getDialogType = function () { return MobileUser.MobileUserDialog; };
+            MobileUserGrid.prototype.getIdProperty = function () { return MobileUser.MobileUserRow.idProperty; };
+            MobileUserGrid.prototype.getLocalTextPrefix = function () { return MobileUser.MobileUserRow.localTextPrefix; };
+            MobileUserGrid.prototype.getService = function () { return MobileUser.MobileUserService.baseUrl; };
+            MobileUserGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MobileUserGrid);
+            return MobileUserGrid;
+        }(Serenity.EntityGrid));
+        MobileUser.MobileUserGrid = MobileUserGrid;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
     var Membership;
     (function (Membership) {
         var LoginPanel = (function (_super) {
@@ -2620,6 +2666,55 @@ var CICP;
         Membership.SignUpForm = SignUpForm;
         [['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['ConfirmEmail', function () { return Serenity.EmailEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(SignUpForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CICP.Membership || (CICP.Membership = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileUserForm = (function (_super) {
+            __extends(MobileUserForm, _super);
+            function MobileUserForm() {
+                _super.apply(this, arguments);
+            }
+            MobileUserForm.formKey = 'MobileUser.MobileUser';
+            return MobileUserForm;
+        }(Serenity.PrefixedContext));
+        MobileUser.MobileUserForm = MobileUserForm;
+        [['Password', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MobileUserForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileUserRow;
+        (function (MobileUserRow) {
+            MobileUserRow.idProperty = 'Username';
+            MobileUserRow.nameProperty = 'Username';
+            MobileUserRow.localTextPrefix = 'MobileUser.MobileUser';
+            var Fields;
+            (function (Fields) {
+            })(Fields = MobileUserRow.Fields || (MobileUserRow.Fields = {}));
+            ['Username', 'Password'].forEach(function (x) { return Fields[x] = x; });
+        })(MobileUserRow = MobileUser.MobileUserRow || (MobileUser.MobileUserRow = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var MobileUserService;
+        (function (MobileUserService) {
+            MobileUserService.baseUrl = 'MobileUser/MobileUser';
+            var Methods;
+            (function (Methods) {
+            })(Methods = MobileUserService.Methods || (MobileUserService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                MobileUserService[x] = function (r, s, o) { return Q.serviceRequest(MobileUserService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = MobileUserService.baseUrl + '/' + x;
+            });
+        })(MobileUserService = MobileUser.MobileUserService || (MobileUser.MobileUserService = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;
 (function (CICP) {

@@ -1233,6 +1233,9 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Common.UserPreferenceUpdateRequest.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileUserColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Navigation\ThemeSelection.ts" />
     <TypeScriptCompile Include="Modules\Common\Navigation\SidebarSearch.ts" />
     <TypeScriptCompile Include="Modules\Common\Navigation\LanguageSelection.ts" />
@@ -1644,6 +1647,18 @@
     <TypeScriptCompile Include="Scripts\typings\slickgrid\slickgrid.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\sortablejs\sortablejs.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\toastr\toastr.d.ts" />
+    <Content Include="Modules\MobileUser\MobileUser\MobileUserIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileUserRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileUserService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileUserForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MobileUser\MobileUser\MobileUserGrid.ts" />
+    <TypeScriptCompile Include="Modules\MobileUser\MobileUser\MobileUserDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1729,6 +1744,7 @@
     <Compile Include="Modules\Common\Imports\ClientTypes\Northwind.ShipperFormatterAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160630_155000_InitialData.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160515_072600_UserPreferences.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160605_215300_Granted.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20151217_000600_LastDirectoryUpdate.cs" />
@@ -1902,6 +1918,12 @@
     <Compile Include="Modules\Northwind\SalesByCategory\SalesByCategoryColumns.cs" />
     <Compile Include="Modules\Northwind\SalesByCategory\SalesByCategoryRepository.cs" />
     <Compile Include="Modules\Northwind\SalesByCategory\SalesByCategoryEndpoint.cs" />
+    <Compile Include="Modules\MobileUser\MobileUser\MobileUserRow.cs" />
+    <Compile Include="Modules\MobileUser\MobileUser\MobileUserColumns.cs" />
+    <Compile Include="Modules\MobileUser\MobileUser\MobileUserForm.cs" />
+    <Compile Include="Modules\MobileUser\MobileUser\MobileUserRepository.cs" />
+    <Compile Include="Modules\MobileUser\MobileUser\MobileUserEndpoint.cs" />
+    <Compile Include="Modules\MobileUser\MobileUser\MobileUserPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

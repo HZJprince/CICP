@@ -207,6 +207,15 @@ namespace MVC
 
         }
 
+        public static class MobileUser
+        {
+            public static class MobileUser_
+            {
+                public const string MobileUserIndex = "~/Modules/MobileUser/MobileUser/MobileUserIndex.cshtml";
+            }
+
+        }
+
         public static class Northwind
         {
             public static class Category
