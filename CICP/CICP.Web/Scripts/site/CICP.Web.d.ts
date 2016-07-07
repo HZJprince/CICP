@@ -408,6 +408,7 @@ declare namespace CICP.MobileUser {
         protected getService(): string;
         protected form: MobileUserForm;
         constructor();
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace CICP.MobileUser {
@@ -1126,12 +1127,14 @@ declare namespace CICP.MobileUser {
         Username: Serenity.StringEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
+        Ipaddress: Serenity.StringEditor;
     }
 }
 declare namespace CICP.MobileUser {
     interface MobileUserRow {
         Username?: string;
         Password?: string;
+        Ipaddress?: string;
         PasswordConfirm?: string;
     }
     namespace MobileUserRow {
@@ -1141,6 +1144,7 @@ declare namespace CICP.MobileUser {
         namespace Fields {
             const Username: string;
             const Password: string;
+            const Ipaddress: string;
             const PasswordConfirm: string;
         }
     }

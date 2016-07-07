@@ -7,6 +7,7 @@
     "Db.MobileUser.MobileAccount.Tel": "手机号码",
     "Db.MobileUser.MobileUser.EntityPlural": "电话接口账号",
     "Db.MobileUser.MobileUser.EntitySingular": "电话接口账号",
+    "Db.MobileUser.MobileUser.Ipaddress": "接口地址",
     "Db.MobileUser.MobileUser.Password": "密码",
     "Db.MobileUser.MobileUser.PasswordConfirm": "确认密码",
     "Db.MobileUser.MobileUser.Username": "电话接口账号",

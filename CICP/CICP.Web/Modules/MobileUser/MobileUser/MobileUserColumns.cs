@@ -13,9 +13,9 @@ namespace CICP.MobileUser.Columns
     [BasedOnRow(typeof(Entities.MobileUserRow))]
     public class MobileUserColumns
     {
-        [EditLink, AlignRight, Width(150)]
+        [EditLink, Width(150)]
         public String Username { get; set; }
-        [Width(500)]
-        public String Password { get; set; }
+        [Width(600)]
+        public String Ipaddress { get; set; }
     }
 }

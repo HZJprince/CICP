@@ -25,5 +25,15 @@ namespace CICP.MobileUser {
                     return "The passwords entered doesn't match!";
             });
         }
+
+        protected afterLoadEntity() {
+            super.afterLoadEntity();
+
+            // these fields are only required in new record mode
+            this.form.Password.element.toggleClass('required', this.isNew())
+                .closest('.field').find('sup').toggle(this.isNew());
+            this.form.PasswordConfirm.element.toggleClass('required', this.isNew())
+                .closest('.field').find('sup').toggle(this.isNew());
+        }
     }
 }

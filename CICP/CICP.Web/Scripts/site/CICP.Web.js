@@ -1643,6 +1643,14 @@ var CICP;
             MobileUserDialog.prototype.getLocalTextPrefix = function () { return MobileUser.MobileUserRow.localTextPrefix; };
             MobileUserDialog.prototype.getNameProperty = function () { return MobileUser.MobileUserRow.nameProperty; };
             MobileUserDialog.prototype.getService = function () { return MobileUser.MobileUserService.baseUrl; };
+            MobileUserDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                // these fields are only required in new record mode
+                this.form.Password.element.toggleClass('required', this.isNew())
+                    .closest('.field').find('sup').toggle(this.isNew());
+                this.form.PasswordConfirm.element.toggleClass('required', this.isNew())
+                    .closest('.field').find('sup').toggle(this.isNew());
+            };
             MobileUserDialog = __decorate([
                 Serenity.Decorators.registerClass(),
                 Serenity.Decorators.responsive()
@@ -2787,7 +2795,7 @@ var CICP;
             return MobileUserForm;
         }(Serenity.PrefixedContext));
         MobileUser.MobileUserForm = MobileUserForm;
-        [['Username', function () { return Serenity.StringEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['PasswordConfirm', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(MobileUserForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Username', function () { return Serenity.StringEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['PasswordConfirm', function () { return Serenity.PasswordEditor; }], ['Ipaddress', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MobileUserForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;
@@ -2802,7 +2810,7 @@ var CICP;
             var Fields;
             (function (Fields) {
             })(Fields = MobileUserRow.Fields || (MobileUserRow.Fields = {}));
-            ['Username', 'Password', 'PasswordConfirm'].forEach(function (x) { return Fields[x] = x; });
+            ['Username', 'Password', 'Ipaddress', 'PasswordConfirm'].forEach(function (x) { return Fields[x] = x; });
         })(MobileUserRow = MobileUser.MobileUserRow || (MobileUser.MobileUserRow = {}));
     })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));

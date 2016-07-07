@@ -18,5 +18,6 @@ namespace CICP.MobileUser.Forms
         public String Password { get; set; }
         [PasswordEditor, OneWay, Required(true)]
         public String PasswordConfirm { get; set; }
+        public String Ipaddress { get; set; }
     }
 }

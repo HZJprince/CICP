@@ -2,6 +2,7 @@
     export interface MobileUserRow {
         Username?: string;
         Password?: string;
+        Ipaddress?: string;
         PasswordConfirm?: string;
     }
 
@@ -13,10 +14,11 @@
         export namespace Fields {
             export declare const Username: string;
             export declare const Password: string;
+            export declare const Ipaddress: string;
             export declare const PasswordConfirm: string;
         }
 
-        ['Username', 'Password', 'PasswordConfirm'].forEach(x => (<any>Fields)[x] = x);
+        ['Username', 'Password', 'Ipaddress', 'PasswordConfirm'].forEach(x => (<any>Fields)[x] = x);
     }
 }
 

@@ -23,7 +23,7 @@ namespace CICP.MobileUser.Entities
             set { Fields.Username[this] = value; }
         }
 
-        [DisplayName("Password"), Column("password"), Size(200), NotNull]
+        [DisplayName("Password"), Column("password"), Size(50), SetFieldFlags(FieldFlags.ClientSide)]
         public String Password
         {
             get { return Fields.Password[this]; }
@@ -35,6 +35,13 @@ namespace CICP.MobileUser.Entities
         {
             get { return Fields.PasswordConfirm[this]; }
             set { Fields.PasswordConfirm[this] = value; }
+        }
+
+        [DisplayName("Ipaddress"), Column("ipaddress"), Size(200)]
+        public String Ipaddress
+        {
+            get { return Fields.Ipaddress[this]; }
+            set { Fields.Ipaddress[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -58,6 +65,7 @@ namespace CICP.MobileUser.Entities
         {
             public StringField Username;
             public StringField Password;
+            public StringField Ipaddress;
             public StringField PasswordConfirm;
 
             public RowFields()
