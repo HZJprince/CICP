@@ -12,5 +12,9 @@ namespace CICP.MobileUser {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected getDefaultSortBy() {
+            return [MobileUserRow.Fields.Username];
+        }
     }
 }

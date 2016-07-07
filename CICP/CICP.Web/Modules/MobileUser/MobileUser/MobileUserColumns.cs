@@ -13,8 +13,9 @@ namespace CICP.MobileUser.Columns
     [BasedOnRow(typeof(Entities.MobileUserRow))]
     public class MobileUserColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, AlignRight, Width(150)]
         public String Username { get; set; }
+        [Width(500)]
         public String Password { get; set; }
     }
 }

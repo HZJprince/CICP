@@ -209,6 +209,11 @@ namespace MVC
 
         public static class MobileUser
         {
+            public static class MobileAccount
+            {
+                public const string MobileAccountIndex = "~/Modules/MobileUser/MobileAccount/MobileAccountIndex.cshtml";
+            }
+
             public static class MobileUser_
             {
                 public const string MobileUserIndex = "~/Modules/MobileUser/MobileUser/MobileUserIndex.cshtml";

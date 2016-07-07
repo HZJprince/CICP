@@ -1233,6 +1233,9 @@
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\Common.UserPreferenceUpdateRequest.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileUserColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1660,9 +1663,15 @@
     <TypeScriptCompile Include="Modules\MobileUser\MobileUser\MobileUserGrid.ts" />
     <TypeScriptCompile Include="Modules\MobileUser\MobileUser\MobileUserDialog.ts" />
     <Content Include="Modules\MobileUser\MobileAccount\MobileAccountIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.MobileAccountForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\MobileUser\MobileAccount\MobileAccountGrid.ts" />
     <TypeScriptCompile Include="Modules\MobileUser\MobileAccount\MobileAccountDialog.ts" />
   </ItemGroup>

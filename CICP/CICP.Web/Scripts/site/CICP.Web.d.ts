@@ -407,6 +407,7 @@ declare namespace CICP.MobileUser {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: MobileUserForm;
+        constructor();
     }
 }
 declare namespace CICP.MobileUser {
@@ -417,6 +418,7 @@ declare namespace CICP.MobileUser {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getDefaultSortBy(): string[];
     }
 }
 declare namespace CICP.MobileUser {
@@ -1067,6 +1069,8 @@ declare namespace CICP.Membership {
     }
 }
 declare namespace CICP.MobileUser {
+}
+declare namespace CICP.MobileUser {
     class MobileAccountForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -1088,21 +1092,21 @@ declare namespace CICP.MobileUser {
         const nameProperty: string;
         const localTextPrefix: string;
         namespace Fields {
-            const Name: any;
-            const Tel: any;
-            const Idnumber: any;
-            const Orderno: any;
+            const Name: string;
+            const Tel: string;
+            const Idnumber: string;
+            const Orderno: string;
         }
     }
 }
 declare namespace CICP.MobileUser {
     namespace MobileAccountService {
         const baseUrl: string;
-        function Create(request: Serenity.SaveRequest<MobileAccountRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<MobileAccountRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MobileAccountRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MobileAccountRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Create(request: Serenity.SaveRequest<MobileAccountRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MobileAccountRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MobileAccountRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MobileAccountRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const Create: string;
             const Update: string;
@@ -1119,13 +1123,16 @@ declare namespace CICP.MobileUser {
         static formKey: string;
     }
     interface MobileUserForm {
-        Password: Serenity.StringEditor;
+        Username: Serenity.StringEditor;
+        Password: Serenity.PasswordEditor;
+        PasswordConfirm: Serenity.PasswordEditor;
     }
 }
 declare namespace CICP.MobileUser {
     interface MobileUserRow {
         Username?: string;
         Password?: string;
+        PasswordConfirm?: string;
     }
     namespace MobileUserRow {
         const idProperty: string;
@@ -1134,6 +1141,7 @@ declare namespace CICP.MobileUser {
         namespace Fields {
             const Username: string;
             const Password: string;
+            const PasswordConfirm: string;
         }
     }
 }

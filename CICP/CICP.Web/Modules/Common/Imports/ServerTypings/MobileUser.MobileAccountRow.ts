@@ -1,5 +1,4 @@
-﻿
-namespace CICP.MobileUser {
+﻿namespace CICP.MobileUser {
     export interface MobileAccountRow {
         Name?: string;
         Tel?: string;
@@ -13,10 +12,10 @@ namespace CICP.MobileUser {
         export const localTextPrefix = 'MobileUser.MobileAccount';
 
         export namespace Fields {
-            export declare const Name;
-            export declare const Tel;
-            export declare const Idnumber;
-            export declare const Orderno;
+            export declare const Name: string;
+            export declare const Tel: string;
+            export declare const Idnumber: string;
+            export declare const Orderno: string;
         }
 
         ['Name', 'Tel', 'Idnumber', 'Orderno'].forEach(x => (<any>Fields)[x] = x);

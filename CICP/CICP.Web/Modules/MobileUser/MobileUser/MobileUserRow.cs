@@ -30,6 +30,13 @@ namespace CICP.MobileUser.Entities
             set { Fields.Password[this] = value; }
         }
 
+        [DisplayName("Confirm Password"), Size(50), SetFieldFlags(FieldFlags.ClientSide)]
+        public String PasswordConfirm
+        {
+            get { return Fields.PasswordConfirm[this]; }
+            set { Fields.PasswordConfirm[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.Username; }
@@ -51,6 +58,7 @@ namespace CICP.MobileUser.Entities
         {
             public StringField Username;
             public StringField Password;
+            public StringField PasswordConfirm;
 
             public RowFields()
                 : base("[dbo].[MobileUser]")

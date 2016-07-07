@@ -7773,3 +7773,12 @@ section.content > .s-DataGrid {
 .s-MobileUser-MobileUserDialog .caption {
   width: 150px;
 }
+/* ------------------------------------------------------------------------- */
+/* APPENDED BY CODE GENERATOR, MOVE TO CORRECT PLACE AND REMOVE THIS COMMENT */
+/* ------------------------------------------------------------------------- */
+.s-MobileUser-MobileAccountDialog > .size {
+  width: 650px;
+}
+.s-MobileUser-MobileAccountDialog .caption {
+  width: 150px;
+}

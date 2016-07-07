@@ -1,0 +1,15 @@
+{
+    "Db.MobileUser.MobileAccount.EntityPlural": "客户账号",
+    "Db.MobileUser.MobileAccount.EntitySingular": "客户账号",
+    "Db.MobileUser.MobileAccount.Idnumber": "身份证",
+    "Db.MobileUser.MobileAccount.Name": "姓名",
+    "Db.MobileUser.MobileAccount.Orderno": "保单号",
+    "Db.MobileUser.MobileAccount.Tel": "手机号码",
+    "Db.MobileUser.MobileUser.EntityPlural": "电话接口账号",
+    "Db.MobileUser.MobileUser.EntitySingular": "电话接口账号",
+    "Db.MobileUser.MobileUser.Password": "密码",
+    "Db.MobileUser.MobileUser.PasswordConfirm": "确认密码",
+    "Db.MobileUser.MobileUser.Username": "电话接口账号",
+    "Navigation.MobileUser/MobileAccount": "客户信息",
+    "Navigation.MobileUser/MobileUser": "融拓电话接口信息"
+}
