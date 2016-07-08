@@ -1692,8 +1692,17 @@ var CICP;
         var MobileAccountDialog = (function (_super) {
             __extends(MobileAccountDialog, _super);
             function MobileAccountDialog() {
-                _super.apply(this, arguments);
+                var _this = this;
+                _super.call(this);
                 this.form = new MobileUser.MobileAccountForm(this.idPrefix);
+                this.form.Idnumber.addValidationRule(this.uniqueName, function (e) {
+                    if (_this.form.Idnumber.value.length != 18 || _this.form.Idnumber.value.length != 15)
+                        return "身份证号位数不正确!";
+                });
+                this.form.Tel.addValidationRule(this.uniqueName, function (e) {
+                    if (_this.form.Tel.value.length != 11)
+                        return "手机号码位数不正确!";
+                });
             }
             MobileAccountDialog.prototype.getFormKey = function () { return MobileUser.MobileAccountForm.formKey; };
             MobileAccountDialog.prototype.getIdProperty = function () { return MobileUser.MobileAccountRow.idProperty; };
@@ -2746,7 +2755,7 @@ var CICP;
             return MobileAccountForm;
         }(Serenity.PrefixedContext));
         MobileUser.MobileAccountForm = MobileAccountForm;
-        [['Name', function () { return Serenity.StringEditor; }], ['Tel', function () { return Serenity.StringEditor; }], ['Orderno', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MobileAccountForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Name', function () { return Serenity.StringEditor; }], ['Idnumber', function () { return Serenity.StringEditor; }], ['Tel', function () { return Serenity.StringEditor; }], ['Orderno', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MobileAccountForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;

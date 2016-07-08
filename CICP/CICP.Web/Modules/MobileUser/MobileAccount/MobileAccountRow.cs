@@ -16,28 +16,28 @@ namespace CICP.MobileUser.Entities
     [ModifyPermission("Administration")]
     public sealed class MobileAccountRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Name"), Column("name"), Size(200), QuickSearch]
+        [DisplayName("Name"), Column("name"), Size(200), QuickSearch, NotNull]
         public String Name
         {
             get { return Fields.Name[this]; }
             set { Fields.Name[this] = value; }
         }
 
-        [DisplayName("Tel"), Column("tel"), Size(200)]
+        [DisplayName("Tel"), Column("tel"), Size(200), NotNull]
         public String Tel
         {
             get { return Fields.Tel[this]; }
             set { Fields.Tel[this] = value; }
         }
 
-        [DisplayName("Idnumber"), Column("idnumber"), Size(200), PrimaryKey]
+        [DisplayName("Idnumber"), Column("idnumber"), Size(200), PrimaryKey, NotNull]
         public String Idnumber
         {
             get { return Fields.Idnumber[this]; }
             set { Fields.Idnumber[this] = value; }
         }
 
-        [DisplayName("Orderno"), Column("orderno"), Size(1000), NotNull]
+        [DisplayName("Orderno"), Column("orderno"), Size(1000)]
         public String Orderno
         {
             get { return Fields.Orderno[this]; }

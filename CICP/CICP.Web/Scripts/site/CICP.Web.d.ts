@@ -430,6 +430,7 @@ declare namespace CICP.MobileUser {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: MobileAccountForm;
+        constructor();
     }
 }
 declare namespace CICP.MobileUser {
@@ -1077,6 +1078,7 @@ declare namespace CICP.MobileUser {
     }
     interface MobileAccountForm {
         Name: Serenity.StringEditor;
+        Idnumber: Serenity.StringEditor;
         Tel: Serenity.StringEditor;
         Orderno: Serenity.StringEditor;
     }

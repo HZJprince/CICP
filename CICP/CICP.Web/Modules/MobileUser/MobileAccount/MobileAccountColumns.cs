@@ -16,7 +16,6 @@ namespace CICP.MobileUser.Columns
         [EditLink]
         public String Name { get; set; }
         public String Tel { get; set; }
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public String Idnumber { get; set; }
         public String Orderno { get; set; }
     }

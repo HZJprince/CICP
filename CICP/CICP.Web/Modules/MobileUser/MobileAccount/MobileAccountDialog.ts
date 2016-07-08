@@ -11,5 +11,19 @@ namespace CICP.MobileUser {
         protected getService() { return MobileAccountService.baseUrl; }
 
         protected form = new MobileAccountForm(this.idPrefix);
+
+        constructor() {
+            super();
+
+            this.form.Idnumber.addValidationRule(this.uniqueName, e => {
+                if (this.form.Idnumber.value.length != 18 || this.form.Idnumber.value.length != 15)
+                    return "身份证号位数不正确!";
+            });
+
+            this.form.Tel.addValidationRule(this.uniqueName, e => {
+                if (this.form.Tel.value.length != 11)
+                    return "手机号码位数不正确!";
+            });
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace CICP.MobileUser.Forms
     public class MobileAccountForm
     {
         public String Name { get; set; }
+        public String Idnumber { get; set; }
         public String Tel { get; set; }
         public String Orderno { get; set; }
     }
