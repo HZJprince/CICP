@@ -400,6 +400,24 @@ declare namespace CICP.Northwind {
     }
 }
 declare namespace CICP.MobileUser {
+    class ResultDialog extends Serenity.EntityDialog<ResultRow, any> {
+        protected getFormKey(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ResultForm;
+    }
+}
+declare namespace CICP.MobileUser {
+    class ResultGrid extends Serenity.EntityGrid<ResultRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ResultDialog;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace CICP.MobileUser {
     class MobileUserDialog extends Serenity.EntityDialog<MobileUserRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -1159,6 +1177,64 @@ declare namespace CICP.MobileUser {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MobileUserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MobileUserRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace CICP.MobileUser {
+    class ResultForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface ResultForm {
+        UserId: Serenity.IntegerEditor;
+        Username: Serenity.StringEditor;
+        Idnumber: Serenity.StringEditor;
+        Data: Serenity.StringEditor;
+        Msg: Serenity.StringEditor;
+        Success: Serenity.StringEditor;
+    }
+}
+declare namespace CICP.MobileUser {
+    interface ResultRow {
+        UserId?: number;
+        Username?: string;
+        Idnumber?: string;
+        Data?: string;
+        Msg?: string;
+        Success?: string;
+        IdnumberName?: string;
+        IdnumberTel?: string;
+        IdnumberOrderno?: string;
+    }
+    namespace ResultRow {
+        const nameProperty: string;
+        const localTextPrefix: string;
+        namespace Fields {
+            const UserId: any;
+            const Username: any;
+            const Idnumber: any;
+            const Data: any;
+            const Msg: any;
+            const Success: any;
+            const IdnumberName: string;
+            const IdnumberTel: string;
+            const IdnumberOrderno: string;
+        }
+    }
+}
+declare namespace CICP.MobileUser {
+    namespace ResultService {
+        const baseUrl: string;
+        function Create(request: Serenity.SaveRequest<ResultRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ResultRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ResultRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ResultRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const Create: string;
             const Update: string;

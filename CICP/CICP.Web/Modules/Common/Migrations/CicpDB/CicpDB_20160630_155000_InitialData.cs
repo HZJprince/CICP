@@ -12,10 +12,10 @@ namespace CICP.Migrations.CicpDB
                 .WithColumn("password").AsString(200).NotNullable();
 
             Create.Table("MobileAccount")
-                .WithColumn("name").AsString(200).Nullable()
-                .WithColumn("tel").AsString(200).Nullable()
-                .WithColumn("idnumber").AsString(200).PrimaryKey().Nullable()
-                .WithColumn("orderno").AsString(1000);
+                .WithColumn("name").AsString(200).NotNullable()
+                .WithColumn("tel").AsString(200).NotNullable()
+                .WithColumn("idnumber").AsString(200).PrimaryKey().NotNullable()
+                .WithColumn("orderno").AsString(1000).Nullable();
         }
 
         public override void Down()

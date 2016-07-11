@@ -1623,6 +1623,50 @@ var CICP;
 (function (CICP) {
     var MobileUser;
     (function (MobileUser) {
+        var ResultDialog = (function (_super) {
+            __extends(ResultDialog, _super);
+            function ResultDialog() {
+                _super.apply(this, arguments);
+                this.form = new MobileUser.ResultForm(this.idPrefix);
+            }
+            ResultDialog.prototype.getFormKey = function () { return MobileUser.ResultForm.formKey; };
+            ResultDialog.prototype.getLocalTextPrefix = function () { return MobileUser.ResultRow.localTextPrefix; };
+            ResultDialog.prototype.getNameProperty = function () { return MobileUser.ResultRow.nameProperty; };
+            ResultDialog.prototype.getService = function () { return MobileUser.ResultService.baseUrl; };
+            ResultDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], ResultDialog);
+            return ResultDialog;
+        }(Serenity.EntityDialog));
+        MobileUser.ResultDialog = ResultDialog;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var ResultGrid = (function (_super) {
+            __extends(ResultGrid, _super);
+            function ResultGrid(container) {
+                _super.call(this, container);
+            }
+            ResultGrid.prototype.getColumnsKey = function () { return 'MobileUser.Result'; };
+            ResultGrid.prototype.getDialogType = function () { return MobileUser.ResultDialog; };
+            ResultGrid.prototype.getLocalTextPrefix = function () { return MobileUser.ResultRow.localTextPrefix; };
+            ResultGrid.prototype.getService = function () { return MobileUser.ResultService.baseUrl; };
+            ResultGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResultGrid);
+            return ResultGrid;
+        }(Serenity.EntityGrid));
+        MobileUser.ResultGrid = ResultGrid;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
         var MobileUserDialog = (function (_super) {
             __extends(MobileUserDialog, _super);
             function MobileUserDialog() {
@@ -2838,6 +2882,54 @@ var CICP;
                 Methods[x] = MobileUserService.baseUrl + '/' + x;
             });
         })(MobileUserService = MobileUser.MobileUserService || (MobileUser.MobileUserService = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var ResultForm = (function (_super) {
+            __extends(ResultForm, _super);
+            function ResultForm() {
+                _super.apply(this, arguments);
+            }
+            ResultForm.formKey = 'MobileUser.Result';
+            return ResultForm;
+        }(Serenity.PrefixedContext));
+        MobileUser.ResultForm = ResultForm;
+        [['UserId', function () { return Serenity.IntegerEditor; }], ['Username', function () { return Serenity.StringEditor; }], ['Idnumber', function () { return Serenity.StringEditor; }], ['Data', function () { return Serenity.StringEditor; }], ['Msg', function () { return Serenity.StringEditor; }], ['Success', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(ResultForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var ResultRow;
+        (function (ResultRow) {
+            ResultRow.nameProperty = 'Username';
+            ResultRow.localTextPrefix = 'MobileUser.Result';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ResultRow.Fields || (ResultRow.Fields = {}));
+            ['UserId', 'Username', 'Idnumber', 'Data', 'Msg', 'Success', 'IdnumberName', 'IdnumberTel', 'IdnumberOrderno'].forEach(function (x) { return Fields[x] = x; });
+        })(ResultRow = MobileUser.ResultRow || (MobileUser.ResultRow = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var ResultService;
+        (function (ResultService) {
+            ResultService.baseUrl = 'MobileUser/Result';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ResultService.Methods || (ResultService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                ResultService[x] = function (r, s, o) { return Q.serviceRequest(ResultService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = ResultService.baseUrl + '/' + x;
+            });
+        })(ResultService = MobileUser.ResultService || (MobileUser.ResultService = {}));
     })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;

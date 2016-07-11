@@ -1674,6 +1674,12 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\MobileUser\MobileAccount\MobileAccountGrid.ts" />
     <TypeScriptCompile Include="Modules\MobileUser\MobileAccount\MobileAccountDialog.ts" />
+    <Content Include="Modules\MobileUser\Result\ResultIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MobileUser\Result\ResultGrid.ts" />
+    <TypeScriptCompile Include="Modules\MobileUser\Result\ResultDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1761,6 +1767,7 @@
     </Compile>
     <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160630_155000_InitialData.cs" />
     <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160707_161600_AlterMobileUserTable.cs" />
+    <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160708_155500_CreateResultTable.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160515_072600_UserPreferences.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160605_215300_Granted.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20151217_000600_LastDirectoryUpdate.cs" />
@@ -1946,6 +1953,12 @@
     <Compile Include="Modules\MobileUser\MobileAccount\MobileAccountRepository.cs" />
     <Compile Include="Modules\MobileUser\MobileAccount\MobileAccountEndpoint.cs" />
     <Compile Include="Modules\MobileUser\MobileAccount\MobileAccountPage.cs" />
+    <Compile Include="Modules\MobileUser\Result\ResultRow.cs" />
+    <Compile Include="Modules\MobileUser\Result\ResultColumns.cs" />
+    <Compile Include="Modules\MobileUser\Result\ResultForm.cs" />
+    <Compile Include="Modules\MobileUser\Result\ResultRepository.cs" />
+    <Compile Include="Modules\MobileUser\Result\ResultEndpoint.cs" />
+    <Compile Include="Modules\MobileUser\Result\ResultPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
