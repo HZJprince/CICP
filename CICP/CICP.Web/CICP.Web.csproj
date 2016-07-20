@@ -1675,11 +1675,23 @@
     <TypeScriptCompile Include="Modules\MobileUser\MobileAccount\MobileAccountGrid.ts" />
     <TypeScriptCompile Include="Modules\MobileUser\MobileAccount\MobileAccountDialog.ts" />
     <Content Include="Modules\MobileUser\Result\ResultIndex.cshtml" />
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.ResultForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Modules\MobileUser\Result\ResultGrid.ts" />
     <TypeScriptCompile Include="Modules\MobileUser\Result\ResultDialog.ts" />
+    <Content Include="Modules\MobileUser\RongTuo\RongTuoIndex.cshtml" />
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.RongTuoRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.RongTuoService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\Common\Imports\ServerTypings\MobileUser.RongTuoForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Modules\MobileUser\RongTuo\RongTuoGrid.ts" />
+    <TypeScriptCompile Include="Modules\MobileUser\RongTuo\RongTuoDialog.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -1768,6 +1780,7 @@
     <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160630_155000_InitialData.cs" />
     <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160707_161600_AlterMobileUserTable.cs" />
     <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160708_155500_CreateResultTable.cs" />
+    <Compile Include="Modules\Common\Migrations\CicpDB\CicpDB_20160720_154200_CreateRongTuoTable.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160515_072600_UserPreferences.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20160605_215300_Granted.cs" />
     <Compile Include="Modules\Common\Migrations\DefaultDB\DefaultDB_20151217_000600_LastDirectoryUpdate.cs" />
@@ -1959,6 +1972,12 @@
     <Compile Include="Modules\MobileUser\Result\ResultRepository.cs" />
     <Compile Include="Modules\MobileUser\Result\ResultEndpoint.cs" />
     <Compile Include="Modules\MobileUser\Result\ResultPage.cs" />
+    <Compile Include="Modules\MobileUser\RongTuo\RongTuoRow.cs" />
+    <Compile Include="Modules\MobileUser\RongTuo\RongTuoColumns.cs" />
+    <Compile Include="Modules\MobileUser\RongTuo\RongTuoForm.cs" />
+    <Compile Include="Modules\MobileUser\RongTuo\RongTuoRepository.cs" />
+    <Compile Include="Modules\MobileUser\RongTuo\RongTuoEndpoint.cs" />
+    <Compile Include="Modules\MobileUser\RongTuo\RongTuoPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

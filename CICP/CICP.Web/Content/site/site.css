@@ -7791,3 +7791,12 @@ section.content > .s-DataGrid {
 .s-MobileUser-ResultDialog .caption {
   width: 150px;
 }
+/* ------------------------------------------------------------------------- */
+/* APPENDED BY CODE GENERATOR, MOVE TO CORRECT PLACE AND REMOVE THIS COMMENT */
+/* ------------------------------------------------------------------------- */
+.s-MobileUser-RongTuoDialog > .size {
+  width: 650px;
+}
+.s-MobileUser-RongTuoDialog .caption {
+  width: 150px;
+}

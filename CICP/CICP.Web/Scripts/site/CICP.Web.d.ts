@@ -400,6 +400,26 @@ declare namespace CICP.Northwind {
     }
 }
 declare namespace CICP.MobileUser {
+    class RongTuoDialog extends Serenity.EntityDialog<RongTuoRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RongTuoForm;
+    }
+}
+declare namespace CICP.MobileUser {
+    class RongTuoGrid extends Serenity.EntityGrid<RongTuoRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RongTuoDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace CICP.MobileUser {
     class ResultDialog extends Serenity.EntityDialog<ResultRow, any> {
         protected getFormKey(): string;
         protected getLocalTextPrefix(): string;
@@ -1235,6 +1255,70 @@ declare namespace CICP.MobileUser {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ResultRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ResultRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace CICP.MobileUser {
+    class RongTuoForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface RongTuoForm {
+        UserId: Serenity.IntegerEditor;
+        Username: Serenity.StringEditor;
+        Idnumber: Serenity.StringEditor;
+        RespCode: Serenity.StringEditor;
+        RespDesc: Serenity.StringEditor;
+        Msg: Serenity.StringEditor;
+        Success: Serenity.StringEditor;
+    }
+}
+declare namespace CICP.MobileUser {
+    interface RongTuoRow {
+        Version?: string;
+        UserId?: number;
+        Username?: string;
+        Idnumber?: string;
+        RespCode?: string;
+        RespDesc?: string;
+        Msg?: string;
+        Success?: string;
+        IdnumberName?: string;
+        IdnumberTel?: string;
+        IdnumberOrderno?: string;
+    }
+    namespace RongTuoRow {
+        const idProperty: string;
+        const nameProperty: string;
+        const localTextPrefix: string;
+        namespace Fields {
+            const Version: any;
+            const UserId: any;
+            const Username: any;
+            const Idnumber: any;
+            const RespCode: any;
+            const RespDesc: any;
+            const Msg: any;
+            const Success: any;
+            const IdnumberName: string;
+            const IdnumberTel: string;
+            const IdnumberOrderno: string;
+        }
+    }
+}
+declare namespace CICP.MobileUser {
+    namespace RongTuoService {
+        const baseUrl: string;
+        function Create(request: Serenity.SaveRequest<RongTuoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RongTuoRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RongTuoRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RongTuoRow>) => void, opt?: Serenity.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const Create: string;
             const Update: string;

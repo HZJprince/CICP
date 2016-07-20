@@ -1623,6 +1623,52 @@ var CICP;
 (function (CICP) {
     var MobileUser;
     (function (MobileUser) {
+        var RongTuoDialog = (function (_super) {
+            __extends(RongTuoDialog, _super);
+            function RongTuoDialog() {
+                _super.apply(this, arguments);
+                this.form = new MobileUser.RongTuoForm(this.idPrefix);
+            }
+            RongTuoDialog.prototype.getFormKey = function () { return MobileUser.RongTuoForm.formKey; };
+            RongTuoDialog.prototype.getIdProperty = function () { return MobileUser.RongTuoRow.idProperty; };
+            RongTuoDialog.prototype.getLocalTextPrefix = function () { return MobileUser.RongTuoRow.localTextPrefix; };
+            RongTuoDialog.prototype.getNameProperty = function () { return MobileUser.RongTuoRow.nameProperty; };
+            RongTuoDialog.prototype.getService = function () { return MobileUser.RongTuoService.baseUrl; };
+            RongTuoDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], RongTuoDialog);
+            return RongTuoDialog;
+        }(Serenity.EntityDialog));
+        MobileUser.RongTuoDialog = RongTuoDialog;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var RongTuoGrid = (function (_super) {
+            __extends(RongTuoGrid, _super);
+            function RongTuoGrid(container) {
+                _super.call(this, container);
+            }
+            RongTuoGrid.prototype.getColumnsKey = function () { return 'MobileUser.RongTuo'; };
+            RongTuoGrid.prototype.getDialogType = function () { return MobileUser.RongTuoDialog; };
+            RongTuoGrid.prototype.getIdProperty = function () { return MobileUser.RongTuoRow.idProperty; };
+            RongTuoGrid.prototype.getLocalTextPrefix = function () { return MobileUser.RongTuoRow.localTextPrefix; };
+            RongTuoGrid.prototype.getService = function () { return MobileUser.RongTuoService.baseUrl; };
+            RongTuoGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RongTuoGrid);
+            return RongTuoGrid;
+        }(Serenity.EntityGrid));
+        MobileUser.RongTuoGrid = RongTuoGrid;
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
         var ResultDialog = (function (_super) {
             __extends(ResultDialog, _super);
             function ResultDialog() {
@@ -2930,6 +2976,55 @@ var CICP;
                 Methods[x] = ResultService.baseUrl + '/' + x;
             });
         })(ResultService = MobileUser.ResultService || (MobileUser.ResultService = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var RongTuoForm = (function (_super) {
+            __extends(RongTuoForm, _super);
+            function RongTuoForm() {
+                _super.apply(this, arguments);
+            }
+            RongTuoForm.formKey = 'MobileUser.RongTuo';
+            return RongTuoForm;
+        }(Serenity.PrefixedContext));
+        MobileUser.RongTuoForm = RongTuoForm;
+        [['UserId', function () { return Serenity.IntegerEditor; }], ['Username', function () { return Serenity.StringEditor; }], ['Idnumber', function () { return Serenity.StringEditor; }], ['RespCode', function () { return Serenity.StringEditor; }], ['RespDesc', function () { return Serenity.StringEditor; }], ['Msg', function () { return Serenity.StringEditor; }], ['Success', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RongTuoForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var RongTuoRow;
+        (function (RongTuoRow) {
+            RongTuoRow.idProperty = 'Version';
+            RongTuoRow.nameProperty = 'Version';
+            RongTuoRow.localTextPrefix = 'MobileUser.RongTuo';
+            var Fields;
+            (function (Fields) {
+            })(Fields = RongTuoRow.Fields || (RongTuoRow.Fields = {}));
+            ['Version', 'UserId', 'Username', 'Idnumber', 'RespCode', 'RespDesc', 'Msg', 'Success', 'IdnumberName', 'IdnumberTel', 'IdnumberOrderno'].forEach(function (x) { return Fields[x] = x; });
+        })(RongTuoRow = MobileUser.RongTuoRow || (MobileUser.RongTuoRow = {}));
+    })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var MobileUser;
+    (function (MobileUser) {
+        var RongTuoService;
+        (function (RongTuoService) {
+            RongTuoService.baseUrl = 'MobileUser/RongTuo';
+            var Methods;
+            (function (Methods) {
+            })(Methods = RongTuoService.Methods || (RongTuoService.Methods = {}));
+            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+                RongTuoService[x] = function (r, s, o) { return Q.serviceRequest(RongTuoService.baseUrl + '/' + x, r, s, o); };
+                Methods[x] = RongTuoService.baseUrl + '/' + x;
+            });
+        })(RongTuoService = MobileUser.RongTuoService || (MobileUser.RongTuoService = {}));
     })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;
