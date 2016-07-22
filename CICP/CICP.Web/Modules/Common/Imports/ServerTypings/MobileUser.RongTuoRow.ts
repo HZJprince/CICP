@@ -1,5 +1,4 @@
-﻿
-namespace CICP.MobileUser {
+﻿namespace CICP.MobileUser {
     export interface RongTuoRow {
         Version?: string;
         UserId?: number;
@@ -20,14 +19,14 @@ namespace CICP.MobileUser {
         export const localTextPrefix = 'MobileUser.RongTuo';
 
         export namespace Fields {
-            export declare const Version;
-            export declare const UserId;
-            export declare const Username;
-            export declare const Idnumber;
-            export declare const RespCode;
-            export declare const RespDesc;
-            export declare const Msg;
-            export declare const Success;
+            export declare const Version: string;
+            export declare const UserId: string;
+            export declare const Username: string;
+            export declare const Idnumber: string;
+            export declare const RespCode: string;
+            export declare const RespDesc: string;
+            export declare const Msg: string;
+            export declare const Success: string;
             export declare const IdnumberName: string;
             export declare const IdnumberTel: string;
             export declare const IdnumberOrderno: string;

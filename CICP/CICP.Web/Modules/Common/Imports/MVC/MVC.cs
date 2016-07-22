@@ -219,6 +219,16 @@ namespace MVC
                 public const string MobileUserIndex = "~/Modules/MobileUser/MobileUser/MobileUserIndex.cshtml";
             }
 
+            public static class Result
+            {
+                public const string ResultIndex = "~/Modules/MobileUser/Result/ResultIndex.cshtml";
+            }
+
+            public static class RongTuo
+            {
+                public const string RongTuoIndex = "~/Modules/MobileUser/RongTuo/RongTuoIndex.cshtml";
+            }
+
         }
 
         public static class Northwind

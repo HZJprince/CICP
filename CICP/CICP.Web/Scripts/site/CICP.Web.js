@@ -1657,6 +1657,41 @@ var CICP;
             RongTuoGrid.prototype.getIdProperty = function () { return MobileUser.RongTuoRow.idProperty; };
             RongTuoGrid.prototype.getLocalTextPrefix = function () { return MobileUser.RongTuoRow.localTextPrefix; };
             RongTuoGrid.prototype.getService = function () { return MobileUser.RongTuoService.baseUrl; };
+            RongTuoGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(CICP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: MobileUser.RongTuoService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true
+                }));
+                buttons.push(CICP.Common.PdfExportHelper.createToolButton({
+                    grid: this,
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    reportTitle: 'RongTuo List',
+                    columnTitles: {
+                        'Discontinued': 'Dis.',
+                    },
+                    tableOptions: {
+                        columnStyles: {
+                            ProductID: {
+                                columnWidth: 25,
+                                halign: 'right'
+                            },
+                            Discountinued: {
+                                columnWidth: 25
+                            }
+                        }
+                    }
+                }));
+                buttons.push(CICP.Common.JsonPost.createToolButton({
+                    service: MobileUser.RongTuoService.baseUrl + '/Json',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true
+                }));
+                return buttons;
+            };
             RongTuoGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], RongTuoGrid);
@@ -2952,6 +2987,7 @@ var CICP;
     (function (MobileUser) {
         var ResultRow;
         (function (ResultRow) {
+            ResultRow.idProperty = 'Username';
             ResultRow.nameProperty = 'Username';
             ResultRow.localTextPrefix = 'MobileUser.Result';
             var Fields;
@@ -2991,7 +3027,7 @@ var CICP;
             return RongTuoForm;
         }(Serenity.PrefixedContext));
         MobileUser.RongTuoForm = RongTuoForm;
-        [['UserId', function () { return Serenity.IntegerEditor; }], ['Username', function () { return Serenity.StringEditor; }], ['Idnumber', function () { return Serenity.StringEditor; }], ['RespCode', function () { return Serenity.StringEditor; }], ['RespDesc', function () { return Serenity.StringEditor; }], ['Msg', function () { return Serenity.StringEditor; }], ['Success', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RongTuoForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['Version', function () { return Serenity.StringEditor; }], ['UserId', function () { return Serenity.IntegerEditor; }], ['Username', function () { return Serenity.StringEditor; }], ['Idnumber', function () { return Serenity.StringEditor; }], ['RespCode', function () { return Serenity.StringEditor; }], ['RespDesc', function () { return Serenity.StringEditor; }], ['Msg', function () { return Serenity.StringEditor; }], ['Success', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RongTuoForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(MobileUser = CICP.MobileUser || (CICP.MobileUser = {}));
 })(CICP || (CICP = {}));
 var CICP;
@@ -3020,7 +3056,7 @@ var CICP;
             var Methods;
             (function (Methods) {
             })(Methods = RongTuoService.Methods || (RongTuoService.Methods = {}));
-            ['Create', 'Update', 'Delete', 'Retrieve', 'List'].forEach(function (x) {
+            ['Create', 'Update', 'Delete', 'Json', 'Retrieve', 'List'].forEach(function (x) {
                 RongTuoService[x] = function (r, s, o) { return Q.serviceRequest(RongTuoService.baseUrl + '/' + x, r, s, o); };
                 Methods[x] = RongTuoService.baseUrl + '/' + x;
             });
@@ -3880,6 +3916,34 @@ var CICP;
             }
             ExcelExportHelper.createToolButton = createToolButton;
         })(ExcelExportHelper = Common.ExcelExportHelper || (Common.ExcelExportHelper = {}));
+    })(Common = CICP.Common || (CICP.Common = {}));
+})(CICP || (CICP = {}));
+var CICP;
+(function (CICP) {
+    var Common;
+    (function (Common) {
+        var JsonPost;
+        (function (JsonPost) {
+            function createToolButton(options) {
+                return {
+                    hint: Q.coalesce(options.title, 'JsonPost'),
+                    title: Q.coalesce(options.hint, ''),
+                    cssClass: 'approve-button',
+                    onClick: function () {
+                        $.ajax({
+                            type: "get",
+                            url: "/services/MobileUser/RongTuo/Json",
+                            dataType: "json",
+                            success: function (data) {
+                                $("#myPnl").html(data.data.respDesc);
+                            },
+                        });
+                    },
+                    separator: options.separator
+                };
+            }
+            JsonPost.createToolButton = createToolButton;
+        })(JsonPost = Common.JsonPost || (Common.JsonPost = {}));
     })(Common = CICP.Common || (CICP.Common = {}));
 })(CICP || (CICP = {}));
 var CICP;

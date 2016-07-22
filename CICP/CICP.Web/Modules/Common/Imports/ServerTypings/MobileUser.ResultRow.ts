@@ -1,5 +1,4 @@
-﻿
-namespace CICP.MobileUser {
+﻿namespace CICP.MobileUser {
     export interface ResultRow {
         UserId?: number;
         Username?: string;
@@ -13,16 +12,17 @@ namespace CICP.MobileUser {
     }
 
     export namespace ResultRow {
+        export const idProperty = 'Username';
         export const nameProperty = 'Username';
         export const localTextPrefix = 'MobileUser.Result';
 
         export namespace Fields {
-            export declare const UserId;
-            export declare const Username;
-            export declare const Idnumber;
-            export declare const Data;
-            export declare const Msg;
-            export declare const Success;
+            export declare const UserId: string;
+            export declare const Username: string;
+            export declare const Idnumber: string;
+            export declare const Data: string;
+            export declare const Msg: string;
+            export declare const Success: string;
             export declare const IdnumberName: string;
             export declare const IdnumberTel: string;
             export declare const IdnumberOrderno: string;

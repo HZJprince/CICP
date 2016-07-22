@@ -12,3 +12,20 @@
         Q.initFullHeightGridPage($('#GridDiv'));
     });
 </script>
+
+<script type="text/javascript">
+        function GetTime() {
+        $.ajax({
+            type:"get",
+            url: "/HelloWorld/jsonResultAction",
+            dataType: "json",
+            success: function (data) {
+                $("#myPnl").html(data.respDesc);
+                },
+            });
+        }
+</script>
+
+<body>
+    <div id="myPnl" style="width: 300px; height: 30px; border: 1px dotted silver;"></div>
+</body>
